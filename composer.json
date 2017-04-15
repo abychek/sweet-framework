@@ -8,5 +8,7 @@
             "email": "alexey.bychek94@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "pimple/pimple": "~3.0"
+    }
 }
