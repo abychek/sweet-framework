@@ -1,0 +1,12 @@
+{
+    "name": "alexey/sweet-framework",
+    "description": "Simple php framework.",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Alexey Bychek",
+            "email": "alexey.bychek94@gmail.com"
+        }
+    ],
+    "require": {}
+}
