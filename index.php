@@ -1,7 +1,6 @@
 <?php
 
 require_once __DIR__ . '/vendor/autoload.php';
-require_once __DIR__ . '/src/Controllers/DefaultController.php';
 
 use Pimple\Container;
 use Symfony\Component\HttpFoundation\Request;
