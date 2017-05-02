@@ -15,7 +15,7 @@ class DefaultController
 {
     public function helloAction(Request $request, $name = 'world')
     {
-        return new Response("Hello " . $name);
+        return new Response("Hello " . $name, Response::HTTP_BAD_REQUEST);
     }
 
     public function byeAction(Request $request, $name = 'world')

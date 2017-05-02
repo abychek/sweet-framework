@@ -13,7 +13,7 @@ class TwigServiceProviderTest extends TestCase
     /** @test */
     function testTwig()
     {
-        $options = require __DIR__ . '/../../config.php';
+        $options = require __DIR__ . '/../../app/config/config.php';
         $container = new Container($options);
         $container->register(new TwigServiceProvider());
 
