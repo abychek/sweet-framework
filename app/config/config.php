@@ -10,14 +10,14 @@ return [
     ],
     'doctrine' => [
         'mapping_dirs' => [
-            __DIR__."/src",
+            __DIR__."/../../src",
         ],
         'dev_mode' => true,
         'connection' => [
             'driver' => 'pdo_mysql',
             'dbname' => 'sweet_db',
             'user' => 'root',
-            'password' => 'root',
+            'password' => 'q12we34r',
             'host' => 'localhost',
         ],
         'types' => [
