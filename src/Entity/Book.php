@@ -2,7 +2,7 @@
 
 namespace SweetFramework\Entity;
 /**
- * @Entity(repositoryClass="BookRepository") @Table(name="books")
+ * @Entity(repositoryClass="SweetFramework\Repository\BookRepository") @Table(name="books")
  **/
 class Book
 {

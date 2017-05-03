@@ -26,7 +26,7 @@ $bok->setDate("23/04/17");
 $em->persist($bok);
 $em->flush();
 
-$bookRepository = $em->getRepository('SweetFramework\Repository\Book');
+$bookRepository = $em->getRepository('SweetFramework\Entity\Book');
 
 /** @var SweetFramework\Entity\Book[] $books */
 $books = $bookRepository->findAll();
