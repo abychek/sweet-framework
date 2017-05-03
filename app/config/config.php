@@ -17,7 +17,7 @@ return [
             'driver' => 'pdo_mysql',
             'dbname' => 'sweet_db',
             'user' => 'root',
-            'password' => 'q12we34r',
+            'password' => 'root',
             'host' => 'localhost',
         ],
         'types' => [
