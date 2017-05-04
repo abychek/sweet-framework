@@ -23,4 +23,14 @@ $routes->add(
     )
 );
 
+$routes->add(
+    'render',
+    new Route(
+        '/render/{name}',
+        [
+            '_controller' => 'SweetFramework\Controllers\MainController::renderAction',
+        ]
+    )
+);
+
 return $routes;

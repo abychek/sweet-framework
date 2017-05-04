@@ -31,15 +31,6 @@ $bookRepository = $em->getRepository('SweetFramework\Entity\Book');
 /** @var SweetFramework\Entity\Book[] $books */
 $books = $bookRepository->findAll();
 
-$container['template_engine'] = function () use ($container) {
-    return new TwigTemplateEngine($container['twig.environment']);
-};
-
-/** @var TwigTemplateEngine $template */
-$template = $container['template_engine'];
-echo  $template->render('books.html', array('books' => $books));
-
-
 $request = Request::createFromGlobals();
 
 $context = new RequestContext();
@@ -54,7 +45,7 @@ $parameters = $matcher->match($path);
 $controller = explode('::', $parameters['_controller']);
 $controllerName = $controller[0];
 $actionName = $controller[1];
-$controller = new $controllerName();
+$controller = new $controllerName($container, $books);
 /** @var Response $response */
 $response = $controller->$actionName($request, $parameters['name']);
 $response->send();
