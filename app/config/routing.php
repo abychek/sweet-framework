@@ -26,11 +26,22 @@ $routes->add(
 $routes->add(
     'render',
     new Route(
-        '/render/{name}',
+        '/main',
         [
             '_controller' => 'SweetFramework\Controllers\MainController::renderAction',
         ]
     )
 );
+
+$routes->add(
+    'login',
+    new Route(
+        '/login',
+        [
+            '_controller' => 'SweetFramework\Controllers\MainController::loginAction',
+        ]
+    )
+);
+
 
 return $routes;

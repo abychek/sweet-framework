@@ -5,7 +5,6 @@ require_once __DIR__ . '/app/config/routing.php';
 
 use Doctrine\ORM\EntityManager;
 use SweetFramework\BaseContainer;
-use SweetFramework\Twig\TwigTemplateEngine;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Matcher\UrlMatcher;
@@ -28,8 +27,7 @@ $em->flush();
 
 $bookRepository = $em->getRepository('SweetFramework\Entity\Book');
 
-/** @var SweetFramework\Entity\Book[] $books */
-$books = $bookRepository->findAll();
+$container['books'] = $bookRepository->findAll();
 
 $request = Request::createFromGlobals();
 
@@ -45,8 +43,7 @@ $parameters = $matcher->match($path);
 $controller = explode('::', $parameters['_controller']);
 $controllerName = $controller[0];
 $actionName = $controller[1];
-$controller = new $controllerName($container, $books);
+$controller = new $controllerName($container);
 /** @var Response $response */
 $response = $controller->$actionName($request, $parameters['name']);
 $response->send();
-

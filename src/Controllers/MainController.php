@@ -12,28 +12,18 @@ class MainController {
 
     /** @var Container $container */
     private $container;
-    /** @var ..\SweetFramework\Entity\Book[] $books */
-    private $books;
 
-    function __construct($container, $books) {
+    function __construct($container) {
         $this->container = $container;
-        $this->books = $books;
     }
 
-    public function renderAction(Request $request, $name = 'world')
+    public function renderAction(Request $request)
     {
-        /**
-         * @return TwigTemplateEngine
-         */
-        $this->container['template_engine'] = function ()  {
-            return new TwigTemplateEngine($this->container['twig.environment']);
-        };
-
-        /** @var TwigTemplateEngine $template */
-        $template = $this->container['template_engine'];
-
-       return new Response($template->render('books.html', array('books' => $this->books)));
-
+       return new Response($this->container['template_engine']->render('main.html', array()));
     }
 
+    public function loginAction(Request $request)
+    {
+        return new Response($this->container['template_engine']->render('profile.html', array()));
+    }
 }
