@@ -6,7 +6,9 @@ return [
             'cache' => __DIR__ . '/../../src/resources/compilation_cache',
             'auto_reload' => true
         ],
-        'loader_paths' => __DIR__ . '/../../src/resources/templates',
+        'loader_paths' =>
+            __DIR__ . '/../../src/resources/templates',
+
     ],
     'doctrine' => [
         'mapping_dirs' => [

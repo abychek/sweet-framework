@@ -43,5 +43,35 @@ $routes->add(
     )
 );
 
+$routes->add(
+    'register',
+    new Route(
+        '/register',
+        [
+            '_controller' => 'SweetFramework\Controllers\MainController::registerAction',
+        ]
+    )
+);
+
+$routes->add(
+    'logout',
+    new Route(
+        '/logout',
+        [
+            '_controller' => 'SweetFramework\Controllers\MainController::logoutAction',
+        ]
+    )
+);
+
+$routes->add(
+    'forgot',
+    new Route(
+        '/forgot',
+        [
+            '_controller' => 'SweetFramework\Controllers\MainController::forgotAction',
+        ]
+    )
+);
+
 
 return $routes;

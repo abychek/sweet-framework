@@ -2,15 +2,13 @@
 {% block title %}Profile{% endblock %}
 {% block content %}
 <div class="form">
-
-    <h1>Welcome</h1>
-
+    {% for user in users %}
+    <h1>Welcome {{ user.firstname }}</h1>
+    {% endfor %}
     <div class="info">
         Account is unverified, please confirm your email by clicking
         on the email link!
     </div>
-    <a href="logout.php">
-        <button class="button button-block" name="logout"/>
-        Log Out</button></a>
+    <a href="/index.php/logout"><button class="button button-block" name="logout"/>Log Out</button></a>
 </div>
 {% endblock %}
